@@ -1,0 +1,7 @@
+{
+  "name": "RDW Vehicle Information",
+  "content_in_root": false,
+  "render_readme": true,
+  "country": ["NL"],
+  "domains": ["sensor", "image"]
+}
