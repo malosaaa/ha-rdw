@@ -1,0 +1,149 @@
+{
+    "config": {
+      "step": {
+        "user": {
+          "title": "Add RDW Vehicle",
+          "description": "Enter the Dutch license plate number (e.g., G727FN or G-727-FN).",
+          "data": {
+            "license_plate": "License Plate"
+          }
+        },
+        "options": {
+           "title": "Configure Sensors for {license_plate}",
+           "description": "Select which data points you want to create sensors for. You can also enable the vehicle image entity (requires 'merk' sensor and brand logos in the integration's 'www' folder).",
+           "data": {
+              "enable_image": "Enable Vehicle Brand Image Entity",
+              "kenteken": "License Plate (Kenteken)",
+              "voertuigsoort": "Vehicle Type (Voertuigsoort)",
+              "merk": "Make (Merk)",
+              "handelsbenaming": "Model Name (Handelsbenaming)",
+              "vervaldatum_apk": "APK Expiry Date (Raw)",
+              "datum_tenaamstelling": "Registration Date (Raw)",
+              "bruto_bpm": "Gross BPM (Tax)",
+              "inrichting": "Body Style (Inrichting)",
+              "aantal_zitplaatsen": "Number of Seats",
+              "eerste_kleur": "Primary Color",
+              "tweede_kleur": "Secondary Color",
+              "aantal_cilinders": "Number of Cylinders",
+              "cilinderinhoud": "Cylinder Capacity (cm³)",
+              "massa_ledig_voertuig": "Empty Mass (kg)",
+              "toegestane_maximum_massa_voertuig": "Max Permitted Mass (kg)",
+              "massa_rijklaar": "Mass Ready-to-drive (kg)",
+              "maximum_massa_trekken_ongeremd": "Max Towing Mass Unbraked (kg)",
+              "maximum_trekken_massa_geremd": "Max Towing Mass Braked (kg)",
+              "datum_eerste_toelating": "First Admission Date (Raw)",
+              "datum_eerste_tenaamstelling_in_nederland": "First Registration Date NL (Raw)",
+              "wacht_op_keuren": "Waiting for Inspection",
+              "catalogusprijs": "Catalog Price (EUR)",
+              "wam_verzekerd": "Liability Insured (WAM)",
+              "maximale_constructiesnelheid": "Max Construction Speed (km/h)",
+              "aantal_deuren": "Number of Doors",
+              "aantal_wielen": "Number of Wheels",
+              "lengte": "Length (cm)",
+              "breedte": "Width (cm)",
+              "europese_voertuigcategorie": "European Vehicle Category",
+              "technische_max_massa_voertuig": "Technical Max Mass (kg)",
+              "type": "Type",
+              "typegoedkeuringsnummer": "Type Approval Number",
+              "variant": "Variant",
+              "uitvoering": "Execution",
+              "volgnummer_wijziging_eu_typegoedkeuring": "EU Type Approval Change Seq. No.",
+              "vermogen_massarijklaar": "Power / Mass Ratio",
+              "wielbasis": "Wheelbase (cm)",
+              "export_indicator": "Export Indicator",
+              "openstaande_terugroepactie_indicator": "Outstanding Recall Indicator",
+              "taxi_indicator": "Taxi Indicator",
+              "maximum_massa_samenstelling": "Max Combination Mass (kg)",
+              "jaar_laatste_registratie_tellerstand": "Year Last Odometer Reading",
+              "tellerstandoordeel": "Odometer Judgment",
+              "code_toelichting_tellerstandoordeel": "Odometer Judgment Code",
+              "tenaamstellen_mogelijk": "Registration Possible",
+              "vervaldatum_apk_dt": "APK Expiry Date",
+              "datum_tenaamstelling_dt": "Registration Date",
+              "datum_eerste_toelating_dt": "First Admission Date",
+              "datum_eerste_tenaamstelling_in_nederland_dt": "First Registration Date NL",
+              "hoogte_voertuig": "Height (cm)",
+              "zuinigheidsclassificatie": "Economy Classification"
+            }
+        }
+      },
+      "error": {
+        "cannot_connect": "Failed to connect to the RDW API. Check your internet connection.",
+        "invalid_license_plate": "Invalid or unknown license plate. Please check the number.",
+        "unknown": "An unexpected error occurred. Check Home Assistant logs for details."
+      },
+      "abort": {
+        "already_configured": "This license plate is already configured."
+      }
+    },
+     "options": {
+      "step": {
+        "init": {
+          "title": "Configure Sensors for {license_plate}",
+          "description": "Select which data points you want to create sensors for. You can also enable the vehicle image entity (requires 'merk' sensor and brand logos in the integration's 'www' folder).",
+           "data": {
+              "enable_image": "Enable Vehicle Brand Image Entity",
+              "kenteken": "License Plate (Kenteken)",
+              "voertuigsoort": "Vehicle Type (Voertuigsoort)",
+              "merk": "Make (Merk)",
+              "handelsbenaming": "Model Name (Handelsbenaming)",
+              "vervaldatum_apk": "APK Expiry Date (Raw)",
+              "datum_tenaamstelling": "Registration Date (Raw)",
+              "bruto_bpm": "Gross BPM (Tax)",
+              "inrichting": "Body Style (Inrichting)",
+              "aantal_zitplaatsen": "Number of Seats",
+              "eerste_kleur": "Primary Color",
+              "tweede_kleur": "Secondary Color",
+              "aantal_cilinders": "Number of Cylinders",
+              "cilinderinhoud": "Cylinder Capacity (cm³)",
+              "massa_ledig_voertuig": "Empty Mass (kg)",
+              "toegestane_maximum_massa_voertuig": "Max Permitted Mass (kg)",
+              "massa_rijklaar": "Mass Ready-to-drive (kg)",
+              "maximum_massa_trekken_ongeremd": "Max Towing Mass Unbraked (kg)",
+              "maximum_trekken_massa_geremd": "Max Towing Mass Braked (kg)",
+              "datum_eerste_toelating": "First Admission Date (Raw)",
+              "datum_eerste_tenaamstelling_in_nederland": "First Registration Date NL (Raw)",
+              "wacht_op_keuren": "Waiting for Inspection",
+              "catalogusprijs": "Catalog Price (EUR)",
+              "wam_verzekerd": "Liability Insured (WAM)",
+              "maximale_constructiesnelheid": "Max Construction Speed (km/h)",
+              "aantal_deuren": "Number of Doors",
+              "aantal_wielen": "Number of Wheels",
+              "lengte": "Length (cm)",
+              "breedte": "Width (cm)",
+              "europese_voertuigcategorie": "European Vehicle Category",
+              "technische_max_massa_voertuig": "Technical Max Mass (kg)",
+              "type": "Type",
+              "typegoedkeuringsnummer": "Type Approval Number",
+              "variant": "Variant",
+              "uitvoering": "Execution",
+              "volgnummer_wijziging_eu_typegoedkeuring": "EU Type Approval Change Seq. No.",
+              "vermogen_massarijklaar": "Power / Mass Ratio",
+              "wielbasis": "Wheelbase (cm)",
+              "export_indicator": "Export Indicator",
+              "openstaande_terugroepactie_indicator": "Outstanding Recall Indicator",
+              "taxi_indicator": "Taxi Indicator",
+              "maximum_massa_samenstelling": "Max Combination Mass (kg)",
+              "jaar_laatste_registratie_tellerstand": "Year Last Odometer Reading",
+              "tellerstandoordeel": "Odometer Judgment",
+              "code_toelichting_tellerstandoordeel": "Odometer Judgment Code",
+              "tenaamstellen_mogelijk": "Registration Possible",
+              "vervaldatum_apk_dt": "APK Expiry Date",
+              "datum_tenaamstelling_dt": "Registration Date",
+              "datum_eerste_toelating_dt": "First Admission Date",
+              "datum_eerste_tenaamstelling_in_nederland_dt": "First Registration Date NL",
+              "hoogte_voertuig": "Height (cm)",
+              "zuinigheidsclassificatie": "Economy Classification"
+            }
+        }
+      },
+       "error": {
+           "unknown": "An unexpected error occurred."
+       },
+       "abort": {
+          "reconfigure_successful": "Options updated successfully!"
+       }
+    }
+  }
+  
+  
