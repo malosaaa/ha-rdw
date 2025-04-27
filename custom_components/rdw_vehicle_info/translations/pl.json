@@ -1,0 +1,117 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Dodaj pojazd RDW",
+        "description": "Wprowadź holenderski numer rejestracyjny (np. GXXXFN lub G-XXX-FN).",
+        "data": {
+          "license_plate": "Numer rejestracyjny"
+        }
+      },
+      "options": {
+          "title": "Skonfiguruj czujniki dla {license_plate}",
+          "description": "Wybierz, które punkty danych chcesz wykorzystać do tworzenia czujników. Możesz również włączyć encję obrazu pojazdu (wymaga czujnika 'merk' i logo marek w folderze 'www' integracji).",
+          "data": {
+            "enable_image": "Włącz encję obrazu marki pojazdu",
+            "kenteken": "Numer rejestracyjny",
+            "voertuigsoort": "Typ pojazdu",
+            "merk": "Marka",
+            "handelsbenaming": "Nazwa modelu",
+            "vervaldatum_apk": "Data ważności APK (surowe)",
+            "datum_tenaamstelling": "Data rejestracji (surowe)",
+            "bruto_bpm": "Brutto BPM (podatek)",
+            "inrichting": "Rodzaj nadwozia",
+            "aantal_zitplaatsen": "Liczba miejsc",
+            "eerste_kleur": "Kolor podstawowy",
+            "tweede_kleur": "Kolor dodatkowy",
+            "aantal_cilinders": "Liczba cylindrów",
+            "cilinderinhoud": "Pojemność skokowa (cm³)",
+            "massa_ledig_voertuig": "Masa własna pojazdu (kg)",
+            "toegestane_maximum_massa_voertuig": "Dopuszczalna masa maksymalna pojazdu (kg)",
+            "massa_rijklaar": "Masa gotowa do jazdy (kg)",
+            "maximum_massa_trekken_ongeremd": "Maks. masa holowania bez hamulca (kg)",
+            "maximum_trekken_massa_geremd": "Maks. masa holowania z hamulcem (kg)",
+            "datum_eerste_toelating": "Data pierwszej rejestracji (surowe)",
+            "datum_eerste_tenaamstelling_in_nederland": "Data pierwszej rejestracji NL (surowe)",
+            "wacht_op_keuren": "Oczekuje na przegląd",
+            "catalogusprijs": "Cena katalogowa (EUR)",
+            "wam_verzekerd": "Ubezpieczenie OC (WAM)",
+            "maximale_constructiesnelheid": "Maks. prędkość konstrukcyjna (km/h)",
+            "aantal_deuren": "Liczba drzwi",
+            "aantal_wielen": "Liczba kół",
+            "lengte": "Długość (cm)",
+            "breedte": "Szerokość (cm)",
+            "europese_voertuigcategorie": "Europejska kategoria pojazdu",
+            "technische_max_massa_voertuig": "Techniczna maks. masa pojazdu (kg)",
+            "type": "Typ",
+            "typegoedkeuringsnummer": "Numer homologacji",
+            "variant": "Wariant",
+            "uitvoering": "Wersja",
+            "volgnummer_wijziging_eu_typegoedkeuring": "Numer kolejny zmiany homologacji UE",
+            "vermogen_massarijklaar": "Stosunek mocy do masy",
+            "wielbasis": "Rozstaw osi (cm)",
+            "export_indicator": "Wskaźnik eksportu",
+            "openstaande_terugroepactie_indicator": "Wskaźnik oczekujących akcji serwisowych",
+            "taxi_indicator": "Wskaźnik taksówki",
+            "maximum_massa_samenstelling": "Maksymalna masa zestawu (kg)",
+            "jaar_laatste_registratie_tellerstand": "Rok ostatniej rejestracji licznika",
+            "tellerstandoordeel": "Ocena licznika",
+            "code_toelichting_tellerstandoordeel": "Kod wyjaśnienia oceny licznika",
+            "tenaamstellen_mogelijk": "Możliwa rejestracja",
+            "vervaldatum_apk_dt": "Data ważności APK",
+            "datum_tenaamstelling_dt": "Data rejestracji",
+            "datum_eerste_toelating_dt": "Data pierwszej rejestracji",
+            "datum_eerste_tenaamstelling_in_nederland_dt": "Data pierwszej rejestracji NL",
+            "hoogte_voertuig": "Wysokość (cm)",
+            "zuinigheidsclassificatie": "Klasyfikacja ekonomiczna"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "Nie można połączyć się z API RDW. Sprawdź połączenie internetowe.",
+        "invalid_license_plate": "Nieprawidłowy lub nieznany numer rejestracyjny. Sprawdź numer.",
+        "unknown": "Wystąpił nieoczekiwany błąd. Sprawdź logi Home Assistant."
+      },
+      "abort": {
+        "already_configured": "Ten numer rejestracyjny jest już skonfigurowany."
+      }
+    },
+    "options": {
+      "step": {
+        "init": {
+            "title": "Skonfiguruj czujniki dla {license_plate}",
+            "description": "Wybierz, które punkty danych chcesz wykorzystać do tworzenia czujników. Możesz również włączyć encję obrazu pojazdu (wymaga czujnika 'merk' i logo marek w folderze 'www' integracji).",
+           "data": {
+             "enable_image": "Włącz encję obrazu marki pojazdu",
+             "kenteken": "Numer rejestracyjny",
+             "voertuigsoort": "Typ pojazdu",
+             "merk": "Marka",
+             "handelsbenaming": "Nazwa modelu",
+             "zuinigheidsclassificatie": "Klasyfikacja ekonomiczna"
+            }
+        }
+      },
+        "error": {
+            "unknown": "Wystąpił nieoczekiwany błąd."
+       },
+       "abort": {
+          "reconfigure_successful": "Opcje zaktualizowane pomyślnie!"
+       }
+    },
+    "entity": {
+        "binary_sensor": {
+            "rdw_vehicle_info": {
+                "stolen_status_binary": {
+                    "name": "Status kradzieży"
+                }
+            }
+        },
+        "sensor": {
+            "rdw_vehicle_info": {
+                "stolen_url": {
+                    "name": "URL skradzionego obiektu"
+                }
+            }
+        }
+    }
+}

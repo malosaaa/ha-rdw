@@ -1,0 +1,117 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Aggiungi Veicolo RDW",
+        "description": "Inserisci il numero di targa olandese (es. GXXXFN o G-XXX-FN).",
+        "data": {
+          "license_plate": "Targa"
+        }
+      },
+      "options": {
+          "title": "Configura Sensori per {license_plate}",
+          "description": "Seleziona quali punti dati vuoi utilizzare per creare i sensori. Puoi anche abilitare l'entità immagine del veicolo (richiede il sensore 'merk' e i loghi del marchio nella cartella 'www' dell'integrazione).",
+          "data": {
+            "enable_image": "Abilita Entità Immagine Marca Veicolo",
+            "kenteken": "Targa",
+            "voertuigsoort": "Tipo Veicolo",
+            "merk": "Marca",
+            "handelsbenaming": "Nome Modello",
+            "vervaldatum_apk": "Data Scadenza APK (Raw)",
+            "datum_tenaamstelling": "Data Immatricolazione (Raw)",
+            "bruto_bpm": "BPM Lordo (Tassa)",
+            "inrichting": "Stile Carrozzeria",
+            "aantal_zitplaatsen": "Numero Posti",
+            "eerste_kleur": "Colore Primario",
+            "tweede_kleur": "Colore Secondario",
+            "aantal_cilinders": "Numero Cilindri",
+            "cilinderinhoud": "Cilindrata (cm³)",
+            "massa_ledig_voertuig": "Massa a Vuoto (kg)",
+            "toegestane_maximum_massa_voertuig": "Massa Massima Consentita (kg)",
+            "massa_rijklaar": "Massa in Ordine di Marcia (kg)",
+            "maximum_massa_trekken_ongeremd": "Massa Massima Trainabile Non Frenata (kg)",
+            "maximum_trekken_massa_geremd": "Massa Massima Trainabile Frenata (kg)",
+            "datum_eerste_toelating": "Data Prima Immatricolazione (Raw)",
+            "datum_eerste_tenaamstelling_in_nederland": "Data Prima Immatricolazione NL (Raw)",
+            "wacht_op_keuren": "In Attesa di Ispezione",
+            "catalogusprijs": "Prezzo di Listino (EUR)",
+            "wam_verzekerd": "Assicurato RCA (WAM)",
+            "maximale_constructiesnelheid": "Velocità Massima Costruttiva (km/h)",
+            "aantal_deuren": "Numero Porte",
+            "aantal_wielen": "Numero Ruote",
+            "lengte": "Lunghezza (cm)",
+            "breedte": "Larghezza (cm)",
+            "europese_voertuigcategorie": "Categoria Veicolo Europea",
+            "technische_max_massa_voertuig": "Massa Massima Tecnica (kg)",
+            "type": "Tipo",
+            "typegoedkeuringsnummer": "Numero Omologazione",
+            "variant": "Variante",
+            "uitvoering": "Allestimento",
+            "volgnummer_wijziging_eu_typegoedkeuring": "Numero Sequenza Modifica Omologazione EU",
+            "vermogen_massarijklaar": "Rapporto Potenza/Massa",
+            "wielbasis": "Passo (cm)",
+            "export_indicator": "Indicatore Esportazione",
+            "openstaande_terugroepactie_indicator": "Indicatore Richiamo Pendente",
+            "taxi_indicator": "Indicatore Taxi",
+            "maximum_massa_samenstelling": "Massa Massima Combinazione (kg)",
+            "jaar_laatste_registratie_tellerstand": "Anno Ultima Registrazione Contachilometri",
+            "tellerstandoordeel": "Giudizio Contachilometri",
+            "code_toelichting_tellerstandoordeel": "Codice Spiegazione Giudizio Contachilometri",
+            "tenaamstellen_mogelijk": "Immatricolazione Possibile",
+            "vervaldatum_apk_dt": "Data Scadenza APK",
+            "datum_tenaamstelling_dt": "Data Immatricolazione",
+            "datum_eerste_toelating_dt": "Data Prima Immatricolazione",
+            "datum_eerste_tenaamstelling_in_nederland_dt": "Data Prima Immatricolazione NL",
+            "hoogte_voertuig": "Altezza (cm)",
+            "zuinigheidsclassificazione": "Classificazione Economia"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "Impossibile connettersi all'API RDW. Controlla la tua connessione internet.",
+        "invalid_license_plate": "Targa non valida o sconosciuta. Controlla il numero.",
+        "unknown": "Si è verificato un errore imprevisto. Controlla i log di Home Assistant."
+      },
+      "abort": {
+        "already_configured": "Questa targa è già configurata."
+      }
+    },
+    "options": {
+      "step": {
+        "init": {
+            "title": "Configura Sensori per {license_plate}",
+            "description": "Seleziona quali punti dati vuoi utilizzare per creare i sensori. Puoi anche abilitare l'entità immagine del veicolo (richiede il sensore 'merk' e i loghi del marchio nella cartella 'www' dell'integrazione).",
+           "data": {
+             "enable_image": "Abilita Entità Immagine Marca Veicolo",
+             "kenteken": "Targa",
+             "voertuigsoort": "Tipo Veicolo",
+             "merk": "Marca",
+             "handelsbenaming": "Nome Modello",
+             "zuinigheidsclassificazione": "Classificazione Economia"
+            }
+        }
+      },
+        "error": {
+            "unknown": "Si è verificato un errore imprevisto."
+       },
+       "abort": {
+          "reconfigure_successful": "Opzioni aggiornate con successo!"
+       }
+    },
+    "entity": {
+        "binary_sensor": {
+            "rdw_vehicle_info": {
+                "stolen_status_binary": {
+                    "name": "Stato Rubato"
+                }
+            }
+        },
+        "sensor": {
+            "rdw_vehicle_info": {
+                "stolen_url": {
+                    "name": "URL Oggetto Rubato"
+                }
+            }
+        }
+    }
+}

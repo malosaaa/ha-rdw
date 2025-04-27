@@ -1,0 +1,117 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "RDW Fahrzeug hinzufügen",
+        "description": "Geben Sie das niederländische Kennzeichen ein (z.B. GXXXFN oder G-XXX-FN).",
+        "data": {
+          "license_plate": "Kennzeichen"
+        }
+      },
+      "options": {
+          "title": "Sensoren für {license_plate} konfigurieren",
+          "description": "Wählen Sie aus, welche Datenpunkte Sie zum Erstellen von Sensoren verwenden möchten. Sie können auch die Fahrzeugbild-Entität aktivieren (erfordert den Sensor 'merk' und Markenlogos im 'www'-Ordner der Integration).",
+          "data": {
+            "enable_image": "Fahrzeugmarkenbild-Entität aktivieren",
+            "kenteken": "Kennzeichen",
+            "voertuigsoort": "Fahrzeugart",
+            "merk": "Marke",
+            "handelsbenaming": "Modellname",
+            "vervaldatum_apk": "APK Ablaufdatum (Roh)",
+            "datum_tenaamstelling": "Zulassungsdatum (Roh)",
+            "bruto_bpm": "Brutto BPM (Steuer)",
+            "inrichting": "Karosserieform",
+            "aantal_zitplaatsen": "Anzahl der Sitze",
+            "eerste_kleur": "Erste Farbe",
+            "tweede_kleur": "Zweite Farbe",
+            "aantal_cilinders": "Anzahl der Zylinder",
+            "cilinderinhoud": "Hubraum (cm³)",
+            "massa_ledig_voertuig": "Leergewicht (kg)",
+            "toegestane_maximum_massa_voertuig": "Zulässige Gesamtmasse (kg)",
+            "massa_rijklaar": "Masse fahrbereit (kg)",
+            "maximum_massa_trekken_ongeremd": "Max. ungebremste Anhängermasse (kg)",
+            "maximum_trekken_massa_geremd": "Max. gebremste Anhängermasse (kg)",
+            "datum_eerste_toelating": "Datum der ersten Zulassung (Roh)",
+            "datum_eerste_tenaamstelling_in_nederland": "Datum der ersten Zulassung NL (Roh)",
+            "wacht_op_keuren": "Wartet auf Prüfung",
+            "catalogusprijs": "Listenpreis (EUR)",
+            "wam_verzekerd": "Haftpflichtversichert (WAM)",
+            "maximale_constructiesnelheid": "Max. Konstruktionsgeschwindigkeit (km/h)",
+            "aantal_deuren": "Anzahl der Türen",
+            "aantal_wielen": "Anzahl der Räder",
+            "lengte": "Länge (cm)",
+            "breedte": "Breite (cm)",
+            "europese_voertuigcategorie": "Europäische Fahrzeugkategorie",
+            "technische_max_massa_voertuig": "Technische max. Masse (kg)",
+            "type": "Typ",
+            "typegoedkeuringsnummer": "Typgenehmigungsnummer",
+            "variant": "Variante",
+            "uitvoering": "Ausführung",
+            "volgnummer_wijziging_eu_typegoedkeuring": "Folgenummer Änderung EU-Typgenehmigung",
+            "vermogen_massarijklaar": "Leistung / Masse Verhältnis",
+            "wielbasis": "Radstand (cm)",
+            "export_indicator": "Export-Indikator",
+            "openstaande_terugroepactie_indicator": "Offener Rückruf-Indikator",
+            "taxi_indicator": "Taxi-Indikator",
+            "maximum_massa_samenstelling": "Max. Masse der Kombination (kg)",
+            "jaar_laatste_registratie_tellerstand": "Jahr der letzten Kilometerstandregistrierung",
+            "tellerstandoordeel": "Kilometerstand-Urteil",
+            "code_toelichting_tellerstandoordeel": "Code Erläuterung Kilometerstand-Urteil",
+            "tenaamstellen_mogelijk": "Zulassung möglich",
+            "vervaldatum_apk_dt": "APK Ablaufdatum",
+            "datum_tenaamstelling_dt": "Zulassungsdatum",
+            "datum_eerste_toelating_dt": "Datum der ersten Zulassung",
+            "datum_eerste_tenaamstelling_in_nederland_dt": "Datum der ersten Zulassung NL",
+            "hoogte_voertuig": "Höhe (cm)",
+            "zuinigheidsclassificatie": "Verbrauchsklassifizierung"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "Verbindung zur RDW API konnte nicht hergestellt werden. Überprüfen Sie Ihre Internetverbindung.",
+        "invalid_license_plate": "Ungültiges oder unbekanntes Kennzeichen. Überprüfen Sie die Nummer.",
+        "unknown": "Ein unerwarteter Fehler ist aufgetreten. Überprüfen Sie die Home Assistant Protokolle."
+      },
+      "abort": {
+        "already_configured": "Dieses Kennzeichen ist bereits konfiguriert."
+      }
+    },
+    "options": {
+      "step": {
+        "init": {
+            "title": "Sensoren für {license_plate} konfigurieren",
+            "description": "Wählen Sie aus, welche Datenpunkte Sie zum Erstellen von Sensoren verwenden möchten. Sie können auch die Fahrzeugbild-Entität aktivieren (erfordert den Sensor 'merk' und Markenlogos im 'www'-Ordner der Integration).",
+           "data": {
+             "enable_image": "Fahrzeugmarkenbild-Entität aktivieren",
+             "kenteken": "Kennzeichen",
+             "voertuigsoort": "Fahrzeugart",
+             "merk": "Marke",
+             "handelsbenaming": "Modellname",
+             "zuinigheidsclassificatie": "Verbrauchsklassifizierung"
+            }
+        }
+      },
+        "error": {
+            "unknown": "Ein unerwarteter Fehler ist aufgetreten."
+       },
+       "abort": {
+          "reconfigure_successful": "Optionen erfolgreich aktualisiert!"
+       }
+    },
+    "entity": {
+        "binary_sensor": {
+            "rdw_vehicle_info": {
+                "stolen_status_binary": {
+                    "name": "Diebstahlstatus"
+                }
+            }
+        },
+        "sensor": {
+            "rdw_vehicle_info": {
+                "stolen_url": {
+                    "name": "Diebstahl-URL"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,117 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Добавить транспортное средство RDW",
+        "description": "Введите голландский номерной знак (например, GXXXFN или G-XXX-FN).",
+        "data": {
+          "license_plate": "Номерной знак"
+        }
+      },
+      "options": {
+          "title": "Настроить датчики для {license_plate}",
+          "description": "Выберите, какие точки данных вы хотите использовать для создания датчиков. Вы также можете включить сущность изображения транспортного средства (требует датчика 'merk' и логотипов марок в папке 'www' интеграции).",
+          "data": {
+            "enable_image": "Включить сущность изображения марки транспортного средства",
+            "kenteken": "Номерной знак",
+            "voertuigsoort": "Тип транспортного средства",
+            "merk": "Марка",
+            "handelsbenaming": "Название модели",
+            "vervaldatum_apk": "Дата истечения APK (сырые данные)",
+            "datum_tenaamstelling": "Дата регистрации (сырые данные)",
+            "bruto_bpm": "Брутто BPM (налог)",
+            "inrichting": "Тип кузова",
+            "aantal_zitplaatsen": "Количество мест",
+            "eerste_kleur": "Основной цвет",
+            "tweede_kleur": "Дополнительный цвет",
+            "aantal_cilinders": "Количество цилиндров",
+            "cilinderinhoud": "Объем двигателя (см³)",
+            "massa_ledig_voertuig": "Масса пустого транспортного средства (кг)",
+            "toegestane_maximum_massa_voertuig": "Разрешенная максимальная масса транспортного средства (кг)",
+            "massa_rijklaar": "Масса в снаряженном состоянии (кг)",
+            "maximum_massa_trekken_ongeremd": "Макс. масса буксировки без тормозов (кг)",
+            "maximum_trekken_massa_geremd": "Макс. масса буксировки с тормозами (кг)",
+            "datum_eerste_toelating": "Дата первой регистрации (сырые данные)",
+            "datum_eerste_tenaamstelling_in_nederland": "Дата первой регистрации в Нидерландах (сырые данные)",
+            "wacht_op_keuren": "Ожидает осмотра",
+            "catalogusprijs": "Каталожная цена (EUR)",
+            "wam_verzekerd": "Застраховано по ОСАГО (WAM)",
+            "maximale_constructiesnelheid": "Макс. конструктивная скорость (км/ч)",
+            "aantal_deuren": "Количество дверей",
+            "aantal_wielen": "Количество колес",
+            "lengte": "Длина (см)",
+            "breedte": "Ширина (см)",
+            "europese_voertuigcategorie": "Европейская категория транспортного средства",
+            "technische_max_massa_voertuig": "Техническая макс. масса транспортного средства (кг)",
+            "type": "Тип",
+            "typegoedkeuringsnummer": "Номер одобрения типа",
+            "variant": "Вариант",
+            "uitvoering": "Исполнение",
+            "volgnummer_wijziging_eu_typegoedkeuring": "Порядковый номер изменения одобрения типа ЕС",
+            "vermogen_massarijklaar": "Соотношение мощности к массе",
+            "wielbasis": "Колесная база (см)",
+            "export_indicator": "Индикатор экспорта",
+            "openstaande_terugroepactie_indicator": "Индикатор незавершенных отзывных кампаний",
+            "taxi_indicator": "Индикатор такси",
+            "maximum_massa_samenstelling": "Максимальная масса состава (кг)",
+            "jaar_laatste_registratie_tellerstand": "Год последней регистрации показаний одометра",
+            "tellerstandoordeel": "Решение по показаниям одометра",
+            "code_toelichting_tellerstandoordeel": "Код объяснения решения по показаниям одометра",
+            "tenaamstellen_mogelijk": "Возможна регистрация",
+            "vervaldatum_apk_dt": "Дата истечения APK",
+            "datum_tenaamstelling_dt": "Дата регистрации",
+            "datum_eerste_toelating_dt": "Дата первой регистрации",
+            "datum_eerste_tenaamstelling_in_nederland_dt": "Дата первой регистрации в Нидерландах",
+            "hoogte_voertuig": "Высота (см)",
+            "zuinigheidsclassificatie": "Классификация экономичности"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "Не удалось подключиться к API RDW. Проверьте подключение к интернету.",
+        "invalid_license_plate": "Неверный или неизвестный номерной знак. Проверьте номер.",
+        "unknown": "Произошла непредвиденная ошибка. Проверьте логи Home Assistant."
+      },
+      "abort": {
+        "already_configured": "Этот номерной знак уже настроен."
+      }
+    },
+    "options": {
+      "step": {
+        "init": {
+            "title": "Настроить датчики для {license_plate}",
+            "description": "Выберите, какие точки данных вы хотите использовать для создания датчиков. Вы также можете включить сущность изображения транспортного средства (требует датчика 'merk' и логотипов марок в папке 'www' интеграции).",
+           "data": {
+             "enable_image": "Включить сущность изображения марки транспортного средства",
+             "kenteken": "Номерной знак",
+             "voertuigsoort": "Тип транспортного средства",
+             "merk": "Марка",
+             "handelsbenaming": "Название модели",
+             "zuinigheidsclassificatie": "Классификация экономичности"
+            }
+        }
+      },
+        "error": {
+            "unknown": "Произошла непредвиденная ошибка."
+       },
+       "abort": {
+          "reconfigure_successful": "Настройки успешно обновлены!"
+       }
+    },
+    "entity": {
+        "binary_sensor": {
+            "rdw_vehicle_info": {
+                "stolen_status_binary": {
+                    "name": "Статус угона"
+                }
+            }
+        },
+        "sensor": {
+            "rdw_vehicle_info": {
+                "stolen_url": {
+                    "name": "URL угнанного объекта"
+                }
+            }
+        }
+    }
+}
