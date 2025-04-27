@@ -4,7 +4,7 @@
     "config_flow": true,
     "documentation": "https://github.com/malosaaa/homeassistant-rdw", 
     "issue_tracker": "https://github.com/malosaaa/homeassistant-rdw/issues", 
-    "codeowners": ["@YOUR_GITHUB_USERNAME"], 
+    "codeowners": ["@malosaaa"], 
     "requirements": [],
     "iot_class": "cloud_polling",
     "version": "1.0.1",
