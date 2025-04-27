@@ -7,7 +7,7 @@
     "codeowners": ["@Malosaaa"], 
     "requirements": [],
     "iot_class": "cloud_polling",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "dependencies": [],
     "after_dependencies": [],
     "integration_type": "service"
